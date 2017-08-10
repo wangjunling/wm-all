@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>site.wmblog</groupId>
+        <artifactId>wm-all</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <!--<build>
+        <plugins>
+            &lt;!&ndash;maven autoconf 编译时占位符替换&ndash;&gt;
+            <plugin>
+                <groupId>com.alibaba.citrus.tool</groupId>
+                <artifactId>autoconfig-maven-plugin</artifactId>
+                <version>${autoconfig-plugin-version}</version>
+                <configuration>
+                    &lt;!&ndash;要进行AutoConfig的目标文件，默认为${project.artifact.file}。
+                    <dest>${project.artifact.file}</dest>&ndash;&gt;
+
+                    &lt;!&ndash;配置后，是否展开目标文件，默认为false，不展开。
+                    <exploding>true</exploding>
+                    展开到指定目录，默认为${project.build.directory}/${project.build.finalName}。
+                    <explodedDirectory>
+                        ${project.build.directory}/${project.build.finalName}
+                    </explodedDirectory>
+                    &ndash;&gt;
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>autoconfig</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>-->
+
+    <artifactId>wm-site</artifactId>
+    <version>1.0.0</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>el-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>opensymphony</groupId>
+            <artifactId>sitemesh</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>site.wmblog</groupId>
+            <artifactId>wm-service</artifactId>
+        </dependency>
+    </dependencies>
+</project>

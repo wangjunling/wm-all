@@ -1,0 +1,48 @@
+.x-header{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    border-bottom: 1px solid #FFF;
+}
+.x-header .logo{
+    background: url(./simg/logo.png) no-repeat;
+    width: 216px;
+    height: 60px;
+    text-indent: -9999px;
+}
+
+.x-header .nav a{
+    color:#F5F5F5;
+    font-size:18px;
+    display: inline-block;
+    padding: 20px 20px 46px;
+    border-bottom: 4px solid transparent;
+    transition: border-color .3s;
+}
+.x-header .nav a:hover{
+    border-bottom: 4px solid #FFF;
+}
+.x-header .search{
+    position: relative;
+    margin-left: 20px;
+}
+.x-header .i-search{
+    background: url(./simg/search.png) no-repeat;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    position: absolute;
+    top: 26px;
+    left: 6px;
+
+}
+.x-header .search-textfield{
+    border: 1px solid #FFF;
+    background: transparent;
+    color: #FFF;
+    font-size: 14px;
+    padding: 4px 8px 4px 24px;
+    margin-top: 20px;
+}

@@ -1,0 +1,23 @@
+.x-footer{
+    text-align: center;
+    padding:60px 0 120px;
+    background: #666;
+    color: #FFF;
+}
+.x-footer h3{
+    font-size: 44px;
+}
+.x-footer .quick-link{
+    margin:40px 0 20px;
+}
+.x-footer .quick-link a{
+    padding:0 10px;
+}
+.x-footer .quick-link a,
+.x-footer .copyright{
+    color: #FFF;
+    font-size: 14px;
+}
+.x-footer .copyright span{
+    padding: 0 20px;
+}

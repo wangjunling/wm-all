@@ -1,0 +1,37 @@
+.x-slide{
+    height: 710px;
+    width: 100%;
+    padding-bottom: 60px;
+}
+.x-slide-item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 710px;
+    width: 100%;
+    background-position: top center;
+}
+.x-slide-item-text{
+    text-align: center;
+}
+.x-slide-trigger{
+    position: absolute;
+    top: 680px;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+}
+.x-slide-trigger a{
+    display: inline-block;
+    padding: 5px;
+    margin-right: 10px;
+    border: 2px solid #0084db;
+    background: #0084db;
+}
+.x-slide-trigger a:hover,
+.x-slide-trigger a.current{
+    background: #FFF;
+}
+.x-slide-trigger a:last-child{
+    margin-right: 0;
+}

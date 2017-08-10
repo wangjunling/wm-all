@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.wmblog.mapper.ProductPriceMapper">
+    <resultMap id="BaseResultMap" type="com.yellowstone.entity.ProductPrice">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="product_id" jdbcType="BIGINT" property="productId"/>
+        <result column="role_id" jdbcType="BIGINT" property="roleId"/>
+        <result column="price" jdbcType="DOUBLE" property="price"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    id, product_id, role_id, price, user_id, update_time, create_time
+  </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_product_price
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_product_price
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+
+    <insert id="insert" parameterType="com.yellowstone.entity.ProductPrice">
+    insert into t_product_price (id, product_id, role_id,
+      price, user_id, update_time, 
+      create_time)
+    values (#{id,jdbcType=BIGINT}, #{productId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, 
+      #{price,jdbcType=DOUBLE}, #{userId,jdbcType=BIGINT}, now(), now())
+  </insert>
+
+    <insert id="insertSelective" parameterType="com.yellowstone.entity.ProductPrice">
+        insert into t_product_price
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="productId != null">
+                product_id,
+            </if>
+            <if test="roleId != null">
+                role_id,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="productId != null">
+                #{productId,jdbcType=BIGINT},
+            </if>
+            <if test="roleId != null">
+                #{roleId,jdbcType=BIGINT},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.yellowstone.entity.ProductPrice">
+        update t_product_price
+        <set>
+            <if test="productId != null">
+                product_id = #{productId,jdbcType=BIGINT},
+            </if>
+            <if test="roleId != null">
+                role_id = #{roleId,jdbcType=BIGINT},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.yellowstone.entity.ProductPrice">
+        update t_product_price
+        set product_id = #{productId,jdbcType=BIGINT},
+          role_id = #{roleId,jdbcType=BIGINT},
+          price = #{price,jdbcType=DOUBLE},
+          user_id = #{userId,jdbcType=BIGINT},
+          update_time = #{updateTime,jdbcType=TIMESTAMP},
+          create_time = #{createTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+    <select id="selectByProductId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_product_price
+        where id in  (
+            select max(id) from t_product_price
+            where product_id = #{productId,jdbcType=BIGINT}
+            and role_id
+            in
+            <foreach collection="roleIdList" separator="," open="(" close=")" item="roleId">
+                #{roleId, jdbcType=BIGINT}
+            </foreach>
+        group by role_id
+        )
+    </select>
+
+    <select id="selectMinPriceByParam" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_product_price
+        where product_id = #{productId,jdbcType=BIGINT}
+           and role_id in
+        <foreach collection="roleIdList" separator="," open="(" close=")" item="roleId">
+            #{roleId, jdbcType=BIGINT}
+        </foreach>
+        order by price asc limit 1
+    </select>
+
+</mapper>

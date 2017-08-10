@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.wmblog.mapper.QuotePriceRecordMapper">
+    <resultMap id="BaseResultMap" type="com.yellowstone.entity.QuotePriceRecord">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="sub_order_id" jdbcType="VARCHAR" property="subOrderId"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="supplier_price" jdbcType="DOUBLE" property="supplierPrice"/>
+        <result column="dealer_price" jdbcType="DOUBLE" property="dealerPrice"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+
+    <resultMap id="DtoResultMap" type="com.yellowstone.dto.order.QuotePriceRecordDto" extends="BaseResultMap">
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, sub_order_id, user_id, supplier_price, dealer_price, create_time
+    </sql>
+    <sql id="Alias_Column_List">
+        q.id, q.sub_order_id, q.user_id, q.supplier_price, q.dealer_price, q.create_time
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_quote_price_record
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from t_quote_price_record
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <insert id="insert" parameterType="com.yellowstone.entity.QuotePriceRecord">
+        insert into t_quote_price_record (id, sub_order_id, user_id,
+          supplier_price, dealer_price, create_time
+          )
+        values (#{id,jdbcType=BIGINT}, #{subOrderId,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT},
+          #{supplierPrice,jdbcType=DOUBLE}, #{dealerPrice,jdbcType=DOUBLE}, #{createTime,jdbcType=TIMESTAMP}
+          )
+    </insert>
+
+    <insert id="insertSelective" parameterType="com.yellowstone.entity.QuotePriceRecord">
+        insert into t_quote_price_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="subOrderId != null">
+                sub_order_id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="supplierPrice != null">
+                supplier_price,
+            </if>
+            <if test="dealerPrice != null">
+                dealer_price,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+        </trim>
+
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="subOrderId != null">
+                #{subOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="supplierPrice != null">
+                #{supplierPrice,jdbcType=DOUBLE},
+            </if>
+            <if test="dealerPrice != null">
+                #{dealerPrice,jdbcType=DOUBLE},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.yellowstone.entity.QuotePriceRecord">
+        update t_quote_price_record
+        <set>
+            <if test="subOrderId != null">
+                sub_order_id = #{subOrderId,jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="supplierPrice != null">
+                supplier_price = #{supplierPrice,jdbcType=DOUBLE},
+            </if>
+            <if test="dealerPrice != null">
+                dealer_price = #{dealerPrice,jdbcType=DOUBLE},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.yellowstone.entity.QuotePriceRecord">
+        update t_quote_price_record
+        set sub_order_id = #{subOrderId,jdbcType=VARCHAR},
+          user_id = #{userId,jdbcType=BIGINT},
+          supplier_price = #{supplierPrice,jdbcType=DOUBLE},
+          dealer_price = #{dealerPrice,jdbcType=DOUBLE},
+          create_time = #{createTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectBySubOrderId" parameterType="java.lang.String" resultMap="DtoResultMap">
+        select
+        <include refid="Alias_Column_List"/>, (select name from t_user where id=q.user_id) as user_name
+        from t_quote_price_record q
+        where q.sub_order_id = #{subOrderId,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

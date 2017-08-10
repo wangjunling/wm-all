@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <group>
+        <property name="base.domain" defaultValue="zouxue365.com" desc="根域名"/>
+        <property name="luosimao.endUrl" defaultValue="http://sms-api.luosimao.com/v1/send.json" desc="螺丝猫短信发送地址url"/>
+        <property name="luosimao.token" defaultValue="5f439fb54de3da31090c55760554c0f5" desc="螺丝猫短信发送token"/>
+    </group>
+
+    <script>
+        <generate template="yellowstone-common.properties" charset="UTF-8" outputCharset="UTF-8"/>
+        <generate template="spring/spring-common-gateway.xml" charset="UTF-8" outputCharset="UTF-8"/>
+    </script>
+</config>

@@ -1,0 +1,275 @@
+@import "../core/core.css";
+
+@import "../header/header.css";
+@import "../footer/footer.css";
+
+html{
+	background: #fbfbfb
+}
+
+.x-slide{
+    height: 470px;
+    width: 100%;
+    padding-bottom: 60px;
+}
+.x-slide-item{
+    height: 470px;
+    width: 100%;
+    background-position: top center;
+}
+
+.content .left{
+	float: left;
+	width: 230px;
+	margin-right:40px;
+}
+
+.left-nav{
+	position: relative;
+	top: -126px;
+}
+
+.left-nav-header{
+	width: 170px;
+	height: 70px;
+	background: url(../img/left-nav/header.png);
+	color: #fff;
+	padding: 100px 30px 60px 30px;
+}
+
+.left-nav-header .en{
+	font-size: 30px;
+	margin-bottom: 5px;
+}
+
+.left-nav-header .ch{
+	font-size: 24px;
+}
+
+.left-nav-content{
+	width: 230px;
+	height: 380px;
+	background: url(../img/left-nav/nav-bg.png);
+}
+
+.left-nav-content li{
+	height: 70px;
+	line-height: 70px;
+	width: 100%;
+	border-bottom: 1px solid #b8b8b8;
+}
+
+.left-nav-content li.active,
+.left-nav-content li:hover{
+	background: #6c6c6c;
+	color: #fff;
+	cursor: pointer;
+}
+
+.left-nav-content li span{
+	padding-left: 33px;
+}
+
+.content .right{
+	float: left;
+	width: 910px;
+	padding: 0 10px;
+	position: relative;
+}
+
+.crumbs{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #b8b8b8;
+}
+
+
+.crumbs span,
+.crumbs-item{
+	position: relative;
+	color: #999999;
+	font-size: 18px;
+}
+
+.crumbs-item{
+	cursor: pointer;
+}
+
+.crumbs span{
+	margin:0 6px;
+}
+
+.crumbs-item img{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.project-item{
+	margin-bottom: 40px;
+}
+
+.project-intro{
+	float: left;
+	width: 242px;
+	padding-right: 35px;
+}
+
+.project-img{
+	float: left;
+	width: 633px;
+}
+
+.project-intro h6{
+	font-size: 19px;
+	color: #6c6c6c;
+	margin-bottom: 23px;
+}
+
+.project-intro p{
+	font-size: 12px;
+	color: #6c6c6c;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+
+.btn-contact{
+	position: fixed;
+	background: url(../img/about/btn-contact.jpg);
+	width: 83px;
+	height: 83px;
+	right: 10px;
+    bottom: 40px;
+}
+
+.contact{
+	background: #eaeaea;
+	padding:50px 0;
+}
+
+.contact-logo{
+	float: left;
+}
+
+.contact-form{
+	float: left;
+	margin-left: 50px;
+	width: 430px;
+}
+
+.contact-form h6{
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.contact-form .en{
+	color: #1581e6;
+	margin-right: 20px;
+}
+
+.contact-form .ch{
+	color: #575757;
+}
+
+.contact-form .rows{
+    height: 30px;
+    border-bottom: 2px solid #b8b8b8;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.contact-form .focus{
+    border-bottom: 2px solid #1581e6 !important;
+}
+
+.contact-form .rows.right{
+    border-bottom: 2px solid #1581e6;
+}
+
+.contact-form .rows .right{
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    display: none;
+}
+
+.contact-form .rows.right .right{
+    display: block;
+}
+
+.contact-form .rows.wrong{
+    border-bottom: 2px solid #ff7403;
+}
+
+
+.contact-form .rows .wrong{
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    font-size: 18px;
+    color: #ff7403;
+    display: none;
+}
+
+.contact-form .rows .wrong img{
+    position: relative;
+    top: 2px;
+}
+
+.contact-form .rows.wrong .wrong{
+    display: block;
+}
+
+.contact-form .rows label{
+    font-size: 18px;
+    color: #b8b8b8;
+}
+
+.contact-form .rows .ipt{
+    background: transparent;
+    border:none;
+    height: 30px;
+    line-height: 30px;
+    width: 300px;
+    padding:0 10px;
+    outline: none;
+    color: #b8b8b8;
+    font-size: 18px;
+}
+
+.contact-form .rows .textarea{
+    background: transparent;
+    border: 2px solid #b8b8b8;
+    width: 406px;
+    height: 100px;
+    outline: none;
+    color: #b8b8b8;
+    font-size: 18px;
+    margin-top: 5px;
+    padding:0 10px;
+}
+
+.contact-form .rows .textarea-focus {
+    border: 2px solid #1581e6 !important;
+}
+
+.contact-form .rows .textarea-wrong{
+    border: 2px solid #ff7403 !important;
+}
+
+
+.contact-form .rows .btn{
+    font-size: 18px;
+    color: #1376e3;
+    text-align: center;
+    border:2px solid #1376e3;
+    outline: none;
+    height: 40px;
+    background-color: transparent;
+    width: 426px;
+    cursor: pointer;
+
+}
+
+.contact-form .rows .btn-wrong {
+    border:2px solid #ff7403;
+}

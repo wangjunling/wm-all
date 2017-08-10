@@ -1,0 +1,13 @@
+@import "./css/reset.css";
+@import "./css/layout.css";
+@import "./css/utils.css";
+
+a .disabled {
+    cursor: default;
+}
+
+.loading{
+    background-image: url(../img/loading/loading1.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}

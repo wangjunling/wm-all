@@ -1,0 +1,36 @@
+.util-right {
+    float: right;
+    display: inline;
+}
+
+.util-left {
+    float: left;
+    display: inline;
+}
+
+.util-clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+.util-clearfix {
+    /**+height: 1%;*/
+}
+
+.util-grayscale{
+    -webkit-filter: grayscale(40%);
+    -moz-filter: grayscale(40%);
+    -ms-filter: grayscale(40%);
+    -o-filter: grayscale(40%);
+    filter: grayscale(40%);
+    transition: filter .3s;
+}
+.util-grayscale:hover{
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    filter: grayscale(0);
+}

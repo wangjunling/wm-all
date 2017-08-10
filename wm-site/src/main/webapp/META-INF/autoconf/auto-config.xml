@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <group>
+        <property name="hello" defaultValue="nihao"/>
+    </group>
+
+    <script>
+         <!--<generate template="WEB-INF/classes/common.properties" />-->
+    </script>
+</config>
