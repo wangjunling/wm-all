@@ -1,8 +1,123 @@
-.right-card{
-    width:390px;
-    /*height: 300px;*/
-    margin-bottom:10px;
+.wm-header{
+    background-color: white;
 }
-.main-content{
-    min-height:793px;
+.wm-logo{
+    color:#8bc34a;
+    font-size: 25px;
+    font-weight:700;
+    text-decoration-line: none;
+}
+.wm-header .material-icons{
+    color: #767777 !important;
+}
+.wm-navigation .mdl-navigation__link{
+    height:60px;
+    color:#767777;
+    font-weight: 700;
+    font-size: 14px;
+    border-bottom: 4px solid transparent;
+}
+.wm-navigation .mdl-navigation__link:hover {
+    border-bottom: 4px solid #8bc34a;
+    background: #f9f9f9;
+}
+.wm-content{
+    background-color: #F5F7F9;
+}
+.wm-content-inner{
+    max-width: 1000px;
+}
+.wm-overview{
+    text-align: left;
+}
+.wm-avatar{
+    margin: 0 auto;
+}
+.wm-avatar-image{
+    margin: 0 auto;
+    max-width: 150px;
+    border: 1px solid #eee;
+    margin-top: 20px;
+    display: block;
+}
+.wm-avatar-name{
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 2px;
+}
+.wm-avatar-bio{
+    font-size: 10px;
+    color:#999;
+}
+.wm-state{
+    margin: 0 auto 20px;
+}
+.wm-state-item{
+    padding: 0 15px;
+    border-left: 1px solid #eee;
+}
+.wm-state-item:first-child {
+    border-left: none;
+}
+.wm-state-item-count{
+    display: block;
+    text-align: center;
+    font-weight:500;
+}
+.wm-state-item-post{
+    display: block;
+    text-align: center;
+}
+
+.pagination{
+    list-style-type: none;
+    background-color: white;
+    padding-top: 17px;
+    padding-bottom: 8px;
+}
+.pagination li{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+.pagination li.disabled a{
+    cursor: default;
+    color: #999;
+}
+.pagination li.active{
+    background-color:#8bc34a ;
+}
+.pagination li.active a{
+    color:white;
+}
+.pagination li a{
+    color:black;
+    text-decoration-line: none;
+    padding: 0 15px;
+}
+
+/*文章上下篇*/
+.post-nav{
+    list-style-type: none;
+    background-color: white;
+    padding-top: 17px;
+    padding-bottom: 8px;
+}
+.post-nav li{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 49%;
+}
+.post-nav li a{
+    color:black;
+    text-decoration-line: none;
+    padding: 0 15px;
+    vertical-align: top;
+}
+
+
+.wm-list-item a{
+    color:black;
+    text-decoration-line: none;
 }
