@@ -159,7 +159,7 @@
     
     
     
-    <select id="listByCategoryId" parameterType="site.wmblog.mapper.query.article.ArticleQuery">
+    <select id="listByCategoryId" parameterType="site.wmblog.mapper.query.article.ArticleQuery" resultType="site.wmblog.entity.Article">
         select
         <include refid="Base_Column_List" />
         from tb_article
@@ -171,7 +171,7 @@
         <include refid="Page.footer"/>
     </select>
 
-    <select id="countByCategoryId" parameterType="site.wmblog.mapper.query.article.ArticleQuery">
+    <select id="countByCategoryId" parameterType="site.wmblog.mapper.query.article.ArticleQuery" resultType="long">
         select
         count(*)
         from tb_article

@@ -93,7 +93,7 @@
 
 
 
-    <select id="listAll">
+    <select id="listAll" resultType="site.wmblog.entity.Tag">
         select <include refid="Base_Column_List"/> from tb_tag;
     </select>
 </mapper>

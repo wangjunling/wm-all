@@ -18,10 +18,10 @@
     </bean>
 
     <mvc:interceptors>
-        <mvc:interceptor>
+<!--        <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <bean class="site.wmblog.common.web.xuser.XUserInterceptor"/>
-        </mvc:interceptor>
+        </mvc:interceptor>-->
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <bean class="site.wmblog.common.web.CsrfInterceptor"/>

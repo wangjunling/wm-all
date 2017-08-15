@@ -93,7 +93,7 @@
 
 
 
-    <select id="listPage" parameterType="site.wmblog.mapper.query.PageQuery">
+    <select id="listPage" parameterType="site.wmblog.mapper.query.PageQuery" resultType="site.wmblog.entity.Category">
         select
         <include refid="Base_Column_List" />
         from tb_category
@@ -101,7 +101,7 @@
         <include refid="Page.footer"/>
     </select>
 
-    <select id="countAll" >
+    <select id="countAll" resultType="long" >
         select
         count(*)
         from tb_category
