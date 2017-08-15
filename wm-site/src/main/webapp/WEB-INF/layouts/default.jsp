@@ -4,24 +4,32 @@
 <%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <%@include file="/WEB-INF/jsp/taglib/taglibs.jsp" %>
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-cmn">
 <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-    <title><decorator:title /></title>
-    <meta name="description" content="众才" />
-    <meta name="keywords" content="众才 云商城 云电器商城 电器商城"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
-    <meta name="Author" content="cloud assistant" />
-    <link rel="shortcut icon" href="/resources/img/zc-ico-48.ico" type="image/x-icon"/>
-    <%@ include file="/WEB-INF/common/common.jsp" %>
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="wmblog">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>wmblog</title>
+<%@include file="/WEB-INF/common/common.jsp"%>
 </head>
-<body class="bodynormal">
-    <%@ include file="/WEB-INF/common/header.jsp" %>
-   <decorator:body/>
-    <%@ include file="/WEB-INF/common/footer.jsp" %>
+
+<body>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <%@include file="/WEB-INF/common/header.jsp" %>
+    <main class="wm-content mdl-layout__content">
+        <div class="page-content">
+            <div class="wm-content-inner mdl-grid">
+                <%@include file="/WEB-INF/common/left.jsp"%>
+                <decorator:body/>
+            </div>
+
+        </div>
+        <%@ include file="/WEB-INF/common/footer.jsp" %>
+    </main>
+</div>
 </body>
+
 </html>
-
-

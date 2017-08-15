@@ -5,31 +5,14 @@
         <pattern>/resources/*</pattern>
         <pattern>/source/*</pattern>
         <pattern>/index.jsp</pattern>
-        <pattern>/monitor.jsp</pattern>
         <pattern>*.html</pattern>
         <pattern>*.json</pattern>
-
-        <pattern>/index.htm*</pattern>
     </excludes>
 
-
-    <!-- detail -->
-    <decorator name="detail" page="detail.jsp">
-        <pattern>/detail/*</pattern>
-    </decorator>
-
-
-    <!-- user_center -->
-    <decorator name="userCenter" page="user_center.jsp">
-        <pattern>/order/*</pattern>
-        <pattern>/buyer/*</pattern>
-        <pattern>/buyerShippingAddress/*</pattern>
-    </decorator>
 
     <!-- 用来定义装饰器要过滤的页面 -->
     <decorator name="main" page="default.jsp">
         <pattern>/*</pattern>
-        <pattern>/buyer/company.htm</pattern>
     </decorator>
 
 </decorators>

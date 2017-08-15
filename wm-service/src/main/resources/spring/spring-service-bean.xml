@@ -3,46 +3,4 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
-    <bean id="yellowstoneSequenceService" class="site.wmblog.service.impl.YellowStoneSequenceServiceImpl"/>
-    <bean id="searchService" class="site.wmblog.service.impl.NativeSearchServiceImpl"/>
-    <bean id="orderService" class="site.wmblog.service.impl.OrderServiceImpl"/>
-
-    <bean id="categoryService" class="site.wmblog.service.impl.CategoryServiceImpl"/>
-    <bean id="sendMsgService" class="site.wmblog.service.impl.SendSMSServiceImpl"/>
-
-    <bean id="userService" class="site.wmblog.service.impl.UserServiceImpl"/>
-    <bean id="roleService" class="site.wmblog.service.impl.RoleServiceImpl"/>
-    <bean id="permissionService" class="site.wmblog.service.impl.PermissionServiceImpl"/>
-    <bean id="userRoleService" class="site.wmblog.service.impl.UserRoleServiceImpl"/>
-    <bean id="aclService" class="site.wmblog.service.impl.AclServiceImpl"/>
-
-    <bean id="productService" class="site.wmblog.service.impl.ProductServiceImpl"/>
-    <bean id="buyerShippingAddressService" class="site.wmblog.service.impl.BuyerShippingAddressServiceImpl"/>
-    <bean id="subOrderService" class="site.wmblog.service.impl.SubOrderServiceImpl"/>
-    <bean id="categoryAttributeService" class="site.wmblog.service.impl.CategoryAttributeServiceImpl"/>
-    <bean id="categoryParameterService" class="site.wmblog.service.impl.CategoryParameterServiceImpl"/>
-
-    <bean id="buyerService" class="site.wmblog.service.impl.BuyerServiceImpl"/>
-
-    <bean id="areaService" class="site.wmblog.service.impl.AreaServiceImpl"/>
-    <bean id="cityService" class="site.wmblog.service.impl.CityServiceImpl"/>
-    <bean id="provinceService" class="site.wmblog.service.impl.ProvinceServiceImpl"/>
-
-
-    <bean id="systemService" class="site.wmblog.service.impl.SystemServiceImpl"/>
-
-    <bean id="htmlTemplateService" class="site.wmblog.service.impl.HtmlTemplateServiceImpl"/>
-	<bean id="brandService" class="site.wmblog.service.impl.BrandServiceImpl" />
-	
-	<bean id="supplierService" class="site.wmblog.service.impl.SupplierServiceImpl"></bean>
-    <bean id="quotePriceRecordService" class="site.wmblog.service.impl.QuotePriceRecordServiceImpl"></bean>
-    <bean id="contractService" class="site.wmblog.service.impl.ContractServiceImpl"></bean>
-
-    <bean id="feedbackService" class="site.wmblog.service.impl.FeedbackServiceImpl"></bean>
-    <bean id="flowConfService" class="site.wmblog.service.impl.FlowConfServiceImpl"></bean>
-    <bean id="productPriceService" class="site.wmblog.service.impl.ProductPriceServiceImpl"></bean>
-    <bean id="flowService" class="site.wmblog.service.impl.FlowServiceImpl"></bean>
-
-    <bean id="resourceService" class="site.wmblog.service.impl.ResourceServiceImpl"/>
 </beans>

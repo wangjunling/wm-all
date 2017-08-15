@@ -13,13 +13,12 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <!--
     <build>
         <plugins>
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.0</version>
+                <version>1.3.2</version>
                 <configuration>
                     <configurationFile>generatorConfig.xml</configurationFile>
                     <verbose>true</verbose>
@@ -43,12 +42,11 @@
             </plugin>
         </plugins>
     </build>
-    -->
 
     <dependencies>
         <dependency>
-            <groupId>com.yellowstone</groupId>
-            <artifactId>yellowstone-common</artifactId>
+            <groupId>site.wmblog</groupId>
+            <artifactId>wm-common</artifactId>
         </dependency>
     </dependencies>
 </project>

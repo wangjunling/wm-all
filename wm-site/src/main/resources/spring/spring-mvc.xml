@@ -32,39 +32,6 @@
             <mvc:mapping path="/**"/>
             <bean class="site.wmblog.common.web.springmvc.interceptor.CrossDomainInterceptor"/>
         </mvc:interceptor>
-        <mvc:interceptor>
-           <mvc:mapping path="/**"/>
-           <bean class="site.wmblog.common.web.springmvc.interceptor.LoginCheckHandlerInterceptor">
-               <property name="unCheckUrlList">
-                   <list>
-                       <value>/login.htm</value>
-                       <value>/home.htm</value>
-                       <value>/register.htm</value>
-                       <value>/area/list.json</value>
-                       <value>/city/list.json</value>
-                       <value>/province/list.json</value>
-                       <value>/buyer/toRegister.htm</value>
-                       <value>/buyer/sendSecMsg.json</value>
-                       <value>/buyer/register.json</value>
-                       <value>/buyer/checkPhone.json</value>
-                       <value>/buyer/checkAccount.json</value>
-                       <value>/category/categoryTree.json</value>
-                       <value>/common/randCode.htm</value>
-                       <value>/common/checkCode.json</value>
-                       <value>/brand.htm</value>
-                       <value>/index.htm</value>
-                       <value>/feedback.json</value>
-                   </list>
-               </property>
-               <property name="unCheckPatternUrlList">
-                   <list>
-                       <value>^/product/.*$</value>
-                       <value>^/error/.*$</value>
-                   </list>
-               </property>
-               <property name="loginUri" value="/login.htm"/>
-           </bean>
-       </mvc:interceptor>
     </mvc:interceptors>
 
     <!-- 完成请求和注解POJO的映射 Spring3.2 -->

@@ -10,7 +10,7 @@
 
     <context:annotation-config/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
-    <context:component-scan base-package="com.yellowstone.service"/>
+    <context:component-scan base-package="site.wmblog.service"/>
 
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -30,7 +30,7 @@
 
     <aop:config>
         <aop:pointcut id="allServiceMethod"
-                      expression="(execution(* com.yellowstone..*ServiceImpl.*(..)))))"/>
+                      expression="(execution(* site.wmblog..*ServiceImpl.*(..)))))"/>
         <aop:advisor pointcut-ref="allServiceMethod" advice-ref="txAdvice"/>
     </aop:config>
 

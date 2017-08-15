@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="site.wmblog.mapper.CategoryMapper" >
-  <resultMap id="BaseResultMap" type="site.wmblog.entity.Category" >
+<mapper namespace="site.wmblog.mapper.ArticleTagMapper" >
+  <resultMap id="BaseResultMap" type="site.wmblog.entity.ArticleTag" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="article_count" property="articleCount" jdbcType="BIGINT" />
+    <result column="article_id" property="articleId" jdbcType="BIGINT" />
+    <result column="tag_id" property="tagId" jdbcType="BIGINT" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, article_count, update_time, create_time
+    id, article_id, tag_id, update_time, create_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from tb_category
+    from tb_article_tag
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from tb_category
+    delete from tb_article_tag
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="site.wmblog.entity.Category" >
-    insert into tb_category (id, name, article_count, 
+  <insert id="insert" parameterType="site.wmblog.entity.ArticleTag" >
+    insert into tb_article_tag (id, article_id, tag_id, 
       update_time, create_time)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{articleCount,jdbcType=BIGINT}, 
+    values (#{id,jdbcType=BIGINT}, #{articleId,jdbcType=BIGINT}, #{tagId,jdbcType=BIGINT}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="site.wmblog.entity.Category" >
-    insert into tb_category
+  <insert id="insertSelective" parameterType="site.wmblog.entity.ArticleTag" >
+    insert into tb_article_tag
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
       </if>
-      <if test="name != null" >
-        name,
+      <if test="articleId != null" >
+        article_id,
       </if>
-      <if test="articleCount != null" >
-        article_count,
+      <if test="tagId != null" >
+        tag_id,
       </if>
       <if test="updateTime != null" >
         update_time,
@@ -50,11 +50,11 @@
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
+      <if test="articleId != null" >
+        #{articleId,jdbcType=BIGINT},
       </if>
-      <if test="articleCount != null" >
-        #{articleCount,jdbcType=BIGINT},
+      <if test="tagId != null" >
+        #{tagId,jdbcType=BIGINT},
       </if>
       <if test="updateTime != null" >
         #{updateTime,jdbcType=TIMESTAMP},
@@ -64,14 +64,14 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="site.wmblog.entity.Category" >
-    update tb_category
+  <update id="updateByPrimaryKeySelective" parameterType="site.wmblog.entity.ArticleTag" >
+    update tb_article_tag
     <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
+      <if test="articleId != null" >
+        article_id = #{articleId,jdbcType=BIGINT},
       </if>
-      <if test="articleCount != null" >
-        article_count = #{articleCount,jdbcType=BIGINT},
+      <if test="tagId != null" >
+        tag_id = #{tagId,jdbcType=BIGINT},
       </if>
       <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
@@ -82,28 +82,12 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="site.wmblog.entity.Category" >
-    update tb_category
-    set name = #{name,jdbcType=VARCHAR},
-      article_count = #{articleCount,jdbcType=BIGINT},
+  <update id="updateByPrimaryKey" parameterType="site.wmblog.entity.ArticleTag" >
+    update tb_article_tag
+    set article_id = #{articleId,jdbcType=BIGINT},
+      tag_id = #{tagId,jdbcType=BIGINT},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
-
-
-
-    <select id="listPage" parameterType="site.wmblog.mapper.query.PageQuery">
-        select
-        <include refid="Base_Column_List" />
-        from tb_category
-
-        <include refid="Page.footer"/>
-    </select>
-
-    <select id="countAll" >
-        select
-        count(*)
-        from tb_category
-    </select>
 </mapper>
