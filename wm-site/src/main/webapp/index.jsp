@@ -2,9 +2,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>jc</title>
+    <title>DOUBLEKILL</title>
     <script type="text/javascript">
-        location.href = '/index.html';
+        location.href = '/ngapp/index.html';
     </script>
 </head>
 <body>
